@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   xjadeo-0.7.5.tar.gz: 91cfaa1aad732ec17480e79ba3d47201975f821b
+sources:
+  xjadeo-0.7.6.tar.gz: 9608a1ab0b8bda19769ab3a19711cff80d542a2f
