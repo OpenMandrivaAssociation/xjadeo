@@ -1,7 +1,7 @@
 Summary:	Simple video player that receives sync from jack transport
 Name:		xjadeo
 Version:	0.7.6
-Release:	1
+Release:	2
 Group:		Video
 License:	GPLv2+
 Url:		http://xjadeo.sourceforge.net/
