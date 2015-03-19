@@ -20,7 +20,10 @@ BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xpm)
 BuildRequires:	pkgconfig(xv)
+BuildRequires:	pkgconfig(gl)
 BuildRequires:	lash-devel
+BuildRequires: gcc-c++, gcc, gcc-cpp
+
 
 Suggests:	mencoder
 Suggests:	qjadeo
@@ -68,6 +71,9 @@ from jack transport.
 %setup -q
 
 %build
+export CC=gcc
+export CXX=g++
+
 %configure --enable-qtgui
 %make
 
