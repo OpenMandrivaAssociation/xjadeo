@@ -1,11 +1,11 @@
 Summary:	Simple video player that receives sync from jack transport
 Name:		xjadeo
-Version:	0.7.6
-Release:	2
+Version:	0.8.1
+Release:	1
 Group:		Video
 License:	GPLv2+
 Url:		http://xjadeo.sourceforge.net/
-Source0:	%{name}-%{version}.tar.gz
+Source0:	http://sourceforge.net/projects/xjadeo/files/xjadeo/v0.8.1/%{name}-%{version}.tar.gz
 BuildRequires:	imagemagick
 BuildRequires:	ffmpeg-devel
 BuildRequires:	qt4-devel
@@ -20,6 +20,13 @@ BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xpm)
 BuildRequires:	pkgconfig(xv)
+BuildRequires:	pkgconfig(gl)
+BuildRequires:	pkgconfig(glu)
+BuildRequires:	pkgconfig(glut)
+BuildRequires:	lash-devel
+BuildRequires: gcc-c++, gcc, gcc-cpp
+
+
 Suggests:	mencoder
 Suggests:	qjadeo
 
@@ -38,10 +45,9 @@ like mencoder or transcode is highly recommended.
 
 %files
 %{_bindir}/xjadeo
-%{_bindir}/xjinfo
 %{_bindir}/xjremote
+%{_datadir}/%{name}/ArdourMono.ttf
 %{_mandir}/man1/xjadeo.1*
-%{_mandir}/man1/xjinfo.1*
 %{_mandir}/man1/xjremote.1*
 
 #----------------------------------------------------------------------------
@@ -58,7 +64,7 @@ from jack transport.
 %{_bindir}/qjadeo
 %{_datadir}/applications/qjadeo.desktop
 %{_iconsdir}/hicolor/*/apps/qjadeo.png
-%{_mandir}/man1/qjadeo.1*
+
 
 #----------------------------------------------------------------------------
 
@@ -66,7 +72,10 @@ from jack transport.
 %setup -q
 
 %build
-%configure2_5x --enable-qtgui
+export CC=gcc
+export CXX=g++
+
+%configure --enable-qtgui
 %make
 
 %install
@@ -89,7 +98,7 @@ EOF
 # install menu icons
 for N in 16 32 48 64 128;
 do
-convert doc/%{name}.png -resize ${N}x${N} $N.png;
+convert src/qt-gui/images/qjadeo.png -resize ${N}x${N} $N.png;
 install -D -m 0644 $N.png %{buildroot}%{_iconsdir}/hicolor/${N}x${N}/apps/qjadeo.png
 done
 
