@@ -45,10 +45,9 @@ like mencoder or transcode is highly recommended.
 
 %files
 %{_bindir}/xjadeo
-%{_bindir}/xjinfo
 %{_bindir}/xjremote
+%{_datadir}/%{name}/ArdourMono.ttf
 %{_mandir}/man1/xjadeo.1*
-%{_mandir}/man1/xjinfo.1*
 %{_mandir}/man1/xjremote.1*
 
 #----------------------------------------------------------------------------
@@ -65,7 +64,7 @@ from jack transport.
 %{_bindir}/qjadeo
 %{_datadir}/applications/qjadeo.desktop
 %{_iconsdir}/hicolor/*/apps/qjadeo.png
-%{_mandir}/man1/qjadeo.1*
+
 
 #----------------------------------------------------------------------------
 
