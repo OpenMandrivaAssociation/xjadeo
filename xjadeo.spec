@@ -1,11 +1,11 @@
 Summary:	Simple video player that receives sync from jack transport
 Name:		xjadeo
-Version:	0.7.6
-Release:	2
+Version:	0.8.1
+Release:	1
 Group:		Video
 License:	GPLv2+
 Url:		http://xjadeo.sourceforge.net/
-Source0:	%{name}-%{version}.tar.gz
+Source0:	http://sourceforge.net/projects/xjadeo/files/xjadeo/v0.8.1/%{name}-%{version}.tar.gz
 BuildRequires:	imagemagick
 BuildRequires:	ffmpeg-devel
 BuildRequires:	qt4-devel
@@ -20,6 +20,8 @@ BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xpm)
 BuildRequires:	pkgconfig(xv)
+BuildRequires:	lash-devel
+
 Suggests:	mencoder
 Suggests:	qjadeo
 
@@ -66,7 +68,7 @@ from jack transport.
 %setup -q
 
 %build
-%configure2_5x --enable-qtgui
+%configure --enable-qtgui
 %make
 
 %install
