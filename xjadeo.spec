@@ -21,6 +21,8 @@ BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xpm)
 BuildRequires:	pkgconfig(xv)
 BuildRequires:	pkgconfig(gl)
+BuildRequires:	pkgconfig(glu)
+BuildRequires:	pkgconfig(glut)
 BuildRequires:	lash-devel
 BuildRequires: gcc-c++, gcc, gcc-cpp
 
@@ -97,7 +99,7 @@ EOF
 # install menu icons
 for N in 16 32 48 64 128;
 do
-convert doc/%{name}.png -resize ${N}x${N} $N.png;
+convert src/qt-gui/images/qjadeo.png -resize ${N}x${N} $N.png;
 install -D -m 0644 $N.png %{buildroot}%{_iconsdir}/hicolor/${N}x${N}/apps/qjadeo.png
 done
 
