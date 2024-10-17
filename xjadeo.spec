@@ -4,7 +4,7 @@ Version:	0.8.1
 Release:	1
 Group:		Video
 License:	GPLv2+
-Url:		http://xjadeo.sourceforge.net/
+Url:		https://xjadeo.sourceforge.net/
 Source0:	http://sourceforge.net/projects/xjadeo/files/xjadeo/v0.8.1/%{name}-%{version}.tar.gz
 BuildRequires:	imagemagick
 BuildRequires:	ffmpeg-devel
