@@ -6,6 +6,11 @@ Group:		Video
 License:	GPLv2+
 Url:		https://xjadeo.sourceforge.net/
 Source0:	http://sourceforge.net/projects/xjadeo/files/xjadeo/v0.8.1/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	imagemagick
 BuildRequires:	ffmpeg-devel
 BuildRequires:	qt4-devel
